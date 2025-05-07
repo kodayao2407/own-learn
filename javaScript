@@ -1,0 +1,35 @@
+// Fonction pour générer des flashcards
+function generateFlashcards() {
+  const fileInput = document.getElementById('file-input');
+  if (!fileInput.files.length) {
+    alert('Veuillez télécharger un fichier.');
+    return;
+  }
+
+  // TODO: Ajouter la logique pour extraire le contenu du fichier
+  alert('Flashcards générées avec succès !');
+}
+
+// Fonction pour générer un quiz
+function generateQuiz() {
+  const fileInput = document.getElementById('file-input');
+  if (!fileInput.files.length) {
+    alert('Veuillez télécharger un fichier.');
+    return;
+  }
+
+  // TODO: Ajouter la logique pour analyser le document et générer des quiz
+  alert('Quiz généré avec succès !');
+}
+
+// Fonction pour créer un dossier
+function createFolder() {
+  const folderName = prompt('Nom du dossier :');
+  if (folderName) {
+    const folderList = document.getElementById('folder-list');
+    const folder = document.createElement('div');
+    folder.textContent = folderName;
+    folder.className = 'folder';
+    folderList.appendChild(folder);
+  }
+}
