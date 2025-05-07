@@ -1,35 +1,57 @@
-// Fonction pour générer des flashcards
-function generateFlashcards() {
-  const fileInput = document.getElementById('file-input');
-  if (!fileInput.files.length) {
-    alert('Veuillez télécharger un fichier.');
-    return;
-  }
-
-  // TODO: Ajouter la logique pour extraire le contenu du fichier
-  alert('Flashcards générées avec succès !');
-}
-
-// Fonction pour générer un quiz
-function generateQuiz() {
-  const fileInput = document.getElementById('file-input');
-  if (!fileInput.files.length) {
-    alert('Veuillez télécharger un fichier.');
-    return;
-  }
-
-  // TODO: Ajouter la logique pour analyser le document et générer des quiz
-  alert('Quiz généré avec succès !');
-}
-
-// Fonction pour créer un dossier
-function createFolder() {
-  const folderName = prompt('Nom du dossier :');
-  if (folderName) {
-    const folderList = document.getElementById('folder-list');
-    const folder = document.createElement('div');
-    folder.textContent = folderName;
-    folder.className = 'folder';
-    folderList.appendChild(folder);
+// Fonction pour ajouter un travail
+function ajouterTravail() {
+  const travail = prompt("Entrez le nom du travail :");
+  if (travail) {
+    const listeTravaux = document.getElementById('liste-travaux');
+    const newTravail = document.createElement('div');
+    newTravail.textContent = travail;
+    listeTravaux.appendChild(newTravail);
   }
 }
+
+// Fonction pour ajouter un cours
+function ajouterCours() {
+  const cours = prompt("Entrez le nom du cours :");
+  if (cours) {
+    const listeCours = document.getElementById('liste-cours');
+    const newCours = document.createElement('div');
+    newCours.textContent = cours;
+    listeCours.appendChild(newCours);
+  }
+}
+
+// Fonction pour charger les dossiers
+function chargerDossiers() {
+  const dossiers = [
+    { nom: "Mathématiques", activites: ["Exercice 1", "Exercice 2", "Cours 1"] },
+    { nom: "Physique", activites: ["Exercice 1", "Cours 1"] }
+  ];
+
+  const dossiersContainer = document.getElementById('dossiers');
+  dossiers.forEach((dossier, index) => {
+    const bouton = document.createElement('button');
+    bouton.textContent = dossier.nom;
+    bouton.onclick = () => afficherActivites(index, dossiers);
+    dossiersContainer.appendChild(bouton);
+  });
+}
+
+// Fonction pour afficher les activités d'un dossier
+function afficherActivites(index, dossiers) {
+  const questionsContainer = document.getElementById('questions');
+  questionsContainer.innerHTML = '';
+  dossiers[index].activites.forEach((activite, i) => {
+    const question = document.createElement('div');
+    question.innerHTML = `<p>${activite}</p><input type="text" placeholder="Réponse">`;
+    questionsContainer.appendChild(question);
+  });
+  document.getElementById('examen-container').style.display = 'block';
+}
+
+// Fonction pour soumettre l'examen
+function soumettreExamen() {
+  alert("Examen soumis !");
+}
+
+// Charger les dossiers au démarrage
+document.addEventListener('DOMContentLoaded', chargerDossiers);
