@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Own-Learn</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
@@ -19,9 +20,40 @@
   </header>
 
   <main>
-    <section>
-      <h2>Votre plateforme d'apprentissage personnalisée</h2>
-      <p>Enregistrez, suivez et organisez vos unités d'enseignement facilement.</p>
+    <!-- Section pour enregistrer les travaux -->
+    <section id="travailles">
+      <h2>Enregistrer les travaux</h2>
+      <p>Ajoutez vos travaux ou rapports pour les sauvegarder sur le site.</p>
+      <button onclick="ajouterTravail()">Ajouter un nouveau travail</button>
+      <div id="liste-travaux">
+        <!-- Les travaux enregistrés seront affichés ici -->
+      </div>
+    </section>
+
+    <!-- Section pour l'historique des activités -->
+    <section id="historique">
+      <h2>Historique des activités</h2>
+      <p>Consultez vos anciennes activités sauvegardées.</p>
+      <div id="historique-activites">
+        <!-- L'historique des activités sera affiché ici -->
+      </div>
+    </section>
+
+    <!-- Section pour la gestion des enregistrements -->
+    <section id="gestion-enregistrements">
+      <h2>Gestion des enregistrements</h2>
+      <p>Supprimez les enregistrements que vous ne souhaitez plus conserver.</p>
+      <button onclick="supprimerEnregistrements()">Supprimer tous les enregistrements</button>
+    </section>
+
+    <!-- Section pour l'emploi du temps -->
+    <section id="emploi-du-temps">
+      <h2>Emploi du temps</h2>
+      <p>Ajoutez et suivez vos matières ou unités d'enseignement.</p>
+      <button onclick="ajouterCours()">Ajouter un cours à l'emploi du temps</button>
+      <div id="liste-cours">
+        <!-- Les cours ou matières seront affichés ici -->
+      </div>
     </section>
   </main>
 
