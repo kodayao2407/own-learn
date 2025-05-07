@@ -3,56 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Own-Learn</title>
+  <title>Own-Learn - Plateforme d'Apprentissage</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
   <header>
-    <h1>Bienvenue sur Own-Learn</h1>
+    <h1>Own-Learn</h1>
     <nav>
       <ul>
-        <li><a href="historique.html">Historique</a></li>
-        <li><a href="emploi.html">Emploi du temps</a></li>
-        <li><a href="travaux.html">Travaux</a></li>
+        <li><a href="#travaux">Travaux</a></li>
+        <li><a href="#historique">Historique</a></li>
+        <li><a href="#emplois">Emploi du temps</a></li>
+        <li><a href="#examen">Examen</a></li>
+        <li><a href="#chat-ia">Chat IA</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <!-- Section pour enregistrer les travaux -->
-    <section id="travailles">
-      <h2>Enregistrer les travaux</h2>
-      <p>Ajoutez vos travaux ou rapports pour les sauvegarder sur le site.</p>
+    <!-- Section Travaux -->
+    <section id="travaux">
+      <h2>Travaux</h2>
+      <p>Ajoutez et consultez vos travaux enregistrés.</p>
       <button onclick="ajouterTravail()">Ajouter un nouveau travail</button>
       <div id="liste-travaux">
-        <!-- Les travaux enregistrés seront affichés ici -->
+        <!-- Travaux générés dynamiquement ici -->
       </div>
     </section>
 
-    <!-- Section pour l'historique des activités -->
+    <!-- Section Historique -->
     <section id="historique">
-      <h2>Historique des activités</h2>
-      <p>Consultez vos anciennes activités sauvegardées.</p>
+      <h2>Historique</h2>
+      <p>Consultez l'historique de vos activités.</p>
       <div id="historique-activites">
-        <!-- L'historique des activités sera affiché ici -->
+        <!-- Historique généré dynamiquement ici -->
       </div>
     </section>
 
-    <!-- Section pour la gestion des enregistrements -->
-    <section id="gestion-enregistrements">
-      <h2>Gestion des enregistrements</h2>
-      <p>Supprimez les enregistrements que vous ne souhaitez plus conserver.</p>
-      <button onclick="supprimerEnregistrements()">Supprimer tous les enregistrements</button>
+    <!-- Section Emploi du temps -->
+    <section id="emplois">
+      <h2>Emploi du temps</h2>
+      <p>Gérez et suivez vos matières ou cours.</p>
+      <button onclick="ajouterCours()">Ajouter un cours</button>
+      <div id="liste-cours">
+        <!-- Cours générés dynamiquement ici -->
+      </div>
     </section>
 
-    <!-- Section pour l'emploi du temps -->
-    <section id="emploi-du-temps">
-      <h2>Emploi du temps</h2>
-      <p>Ajoutez et suivez vos matières ou unités d'enseignement.</p>
-      <button onclick="ajouterCours()">Ajouter un cours à l'emploi du temps</button>
-      <div id="liste-cours">
-        <!-- Les cours ou matières seront affichés ici -->
+    <!-- Section Examen -->
+    <section id="examen">
+      <h2>Créer un examen</h2>
+      <p>Sélectionnez un dossier pour regrouper les activités et créer un examen.</p>
+      <div id="dossiers">
+        <!-- Les dossiers seront chargés dynamiquement ici -->
+      </div>
+      <button onclick="genererExamen()">Générer un examen</button>
+
+      <div id="examen-container" style="display:none;">
+        <h3>Examen généré</h3>
+        <div id="questions">
+          <!-- Les questions de l'examen s'afficheront ici -->
+        </div>
+        <button onclick="soumettreExamen()">Soumettre l'examen</button>
+      </div>
+
+      <div id="resultats" style="display:none;">
+        <h3>Résultats</h3>
+        <p id="note-final"></p>
+      </div>
+    </section>
+
+    <!-- Section Chat IA -->
+    <section id="chat-ia">
+      <h2>Chat avec l'IA</h2>
+      <div id="chat-container">
+        <div id="chat-messages">
+          <!-- Messages échangés affichés ici -->
+        </div>
+        <div id="chat-input">
+          <input type="text" id="user-message" placeholder="Posez une question..." />
+          <button onclick="sendMessage()">Envoyer</button>
+        </div>
       </div>
     </section>
   </main>
