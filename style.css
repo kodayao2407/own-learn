@@ -1,20 +1,17 @@
-/* Style général pour le corps */
+/* Style global */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
   color: #333;
-  line-height: 1.6;
 }
 
-/* Style pour le header */
 header {
   background-color: #3498db;
   color: white;
   padding: 20px;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
@@ -22,115 +19,93 @@ header h1 {
   font-size: 2rem;
 }
 
-header nav ul {
+nav ul {
   list-style: none;
   padding: 0;
   margin: 10px 0 0;
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
 }
 
-header nav ul li {
+nav ul li {
   display: inline;
 }
 
-header nav ul li a {
+nav ul li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
 }
 
-header nav ul li a:hover {
+nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* Style pour les sections */
-section {
-  margin: 20px auto;
+main {
   padding: 20px;
-  max-width: 800px;
+}
+
+section {
+  margin-bottom: 40px;
+  padding: 20px;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 section h2 {
-  color: #34495e;
   margin-top: 0;
-  font-size: 1.5rem;
 }
 
-section p {
-  color: #666;
-  margin-bottom: 15px;
+#chat-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-/* Style pour les boutons */
-button {
-  padding: 10px 15px;
+#chat-messages {
+  height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+#chat-messages p {
+  margin: 5px 0;
+}
+
+#chat-input {
+  display: flex;
+  gap: 10px;
+}
+
+#chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#chat-input button {
+  padding: 10px;
   background-color: #3498db;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
 }
 
-button:hover {
+#chat-input button:hover {
   background-color: #2980b9;
 }
 
-/* Travaux, Activités et Cours */
-.travail, .activite, .cours {
-  margin: 10px 0;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f4f4f4;
-}
-
-.travail strong, .cours strong {
-  color: #34495e;
-}
-
-/* Gestion des enregistrements */
-#gestion-enregistrements {
-  text-align: center;
-}
-
-/* Emploi du temps */
-#emploi-du-temps div {
-  margin: 10px 0;
-}
-
-/* Style du footer */
-footer {
-  background-color: #34495e;
-  color: white;
-  text-align: center;
-  padding: 10px;
+#resultats {
   margin-top: 20px;
-}
-
-footer p {
-  margin: 0;
-}
-
-/* Responsiveness */
-@media (max-width: 768px) {
-  header nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  button {
-    width: 100%;
-    padding: 12px;
-  }
-
-  section {
-    padding: 15px;
-  }
+  padding: 10px;
+  background-color: #eaf7e4;
+  border: 1px solid #c8e6c9;
+  border-radius: 5px;
 }
